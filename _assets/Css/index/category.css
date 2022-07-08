@@ -1,0 +1,148 @@
+@import '../global.css';
+
+/*--- Inicio categoria profissional ---*/
+
+.categ_profissional {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-secundaria);
+    margin-top: 128px;
+    position: relative;
+}
+
+.categ_profissional h3 {
+    font-family: var(--font-principal);
+    font-size: 2.3rem;
+    letter-spacing: 3px;
+    margin-bottom: 0.3rem;
+    font-weight: 400;
+    background: linear-gradient(91.21deg, #FF3370 -4.21%, #FF8080 97.92%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tipo_profissional {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1170px;
+    gap: 16px;
+    padding-left: 64px;
+    padding-top: 64px;
+    align-content: flex-start;
+} 
+
+.profissao {
+    color: var(--cor-primaria);
+    background-color: #261313;
+    border-radius: 5px;
+    display: flex;
+    padding: 1rem 1rem;
+    max-height: 50px;
+    cursor: pointer;
+}
+
+.profissao:hover {
+    color: #261313;
+    font-weight: 500;
+    background-color: var(--cor-primaria);
+    box-shadow: 0px 0px 6px var(--cor-primaria);
+} 
+
+.linha-vertical {
+    position: absolute;
+    margin-left: 32px;
+    height: 120px;
+    width: 5px;
+    bottom: 0;
+    background: linear-gradient(91.21deg, #FF3370 -4.21%, #FF8080 97.92%);
+}
+
+
+
+/* --- Responsive progressBar --- */
+/* Extra small devices (portrait phones, less than 576px)*/
+@media screen and (max-width: 575.98px) {
+    .linha-vertical {
+       display: none;
+    }
+
+    .categ_profissional{
+        width: 100%;
+    }
+
+    .tipo_profissional{
+        width: 80%;
+        align-items: center;
+        padding: 3rem 0rem 3rem 1.8rem;
+    }
+
+    .categ_profissional h3{
+        font-size: 1.8rem;
+        text-align: center;
+        margin: 0px;
+    }
+
+    .profissao{
+        font-size: 0.8rem;
+        padding: 0.8rem 0.8rem;
+    }
+}
+
+/* Small devices (tablet, 576px and up) */
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+
+    .linha-vertical {
+        display: none;
+    }
+
+    .categ_profissional{
+        width: 100%;
+    }
+
+    .categ_profissional h3{
+        margin-left: 1.6rem;
+    }
+
+    .tipo_profissional{
+        width: 680px;
+    }
+
+    .profissao{
+        font-size: 0.8rem;
+    }
+
+}
+
+/* Small devices (tablet modo paisagem) */
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+
+    .linha-vertical {
+       display: none;
+    }
+
+    .tipo_profissional{
+        width: 860px;
+    }
+
+    .profissao{
+        font-size: 0.8rem;
+    }
+    
+
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+
+    .linha-vertical {
+        height: 130px;
+    }
+
+    .tipo_profissional{
+        width: 980px;
+    }
+
+}

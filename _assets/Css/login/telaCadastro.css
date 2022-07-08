@@ -1,0 +1,728 @@
+@import '../global.css';
+
+
+* {
+    transition: all ease .2s;
+}
+
+html{
+    font-family: 'inter', sans-serif;
+    color: var(--texto-primario);
+}
+
+.container-cadastro-conta {
+    display: block;
+}
+
+.etapa1, .etapa2, .etapa3, .etapa4{
+    display: none;
+}
+
+.etapa1.ativo, .etapa2.ativo, .etapa3.ativo, .etapa4.ativo{
+    display: flex;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.container-cadastro-conta.ativo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+} 
+
+.container-cadastro-conta section.ativo {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.container-cadastro-conta section h1 {
+    font-size: 1.8rem;
+    color: var(--texto-primario);
+}
+
+.progressbar {
+    display: flex;
+    gap: 2rem;
+}
+
+.circle1, .circle2, .circle3, .circle4 {
+    width: 2rem; height: 2rem;
+    background-color: var(--bg-secundario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--lilas-secundario);
+    border-radius: 100%;
+    z-index: 10;
+} 
+
+.circle1.etapa, .circle2.etapa, .circle3.etapa, .circle4.etapa {
+    border: 1px solid var(--lilas-secundario);
+    box-shadow: 0px 0px 16px hsl(262, 100%, 85%, 0.18);
+    position: relative;
+    z-index: 0;
+}
+
+.circle1.etapa::after,.circle2.etapa::after ,.circle3.etapa::after {
+    content: '';
+    width: calc(2rem + 1.5rem);
+    position: absolute;
+    height: 1px;
+    background-color: var(--lilas-placeholder);
+    right: -3.5rem;
+    z-index: -10;
+}
+
+.subtitulo {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/*  COMEÇO DE CONTAINER DO TIPO DE CONTA PROFISSIONAL / EMRPESA */
+
+.container-tipo-conta {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.container-astronauta, .container-empresa {
+    border-radius: 16px;
+    position: relative;
+    cursor: pointer;  
+    border: 2px solid transparent;
+}
+
+.container-astronauta:focus, .container-empresa:focus{
+    border: 2px solid var(--lilas-secundario);
+    box-shadow: 0px 0px 32px hsl(263, 26%, 59%, 0.18);
+}
+
+.box-imagem-profissional, .box-imagem-empresa {
+    overflow: hidden;
+    border-radius: 16px; 
+}
+
+.box-imagem-profissional .imagem-profissional,.box-imagem-empresa .imagem-empresa{
+    height: 310px;
+    width: 240px;
+    filter: grayscale(100%);
+}
+
+.box-imagem-profissional .imagem-profissional:hover, .box-imagem-empresa .imagem-empresa:hover{
+    transform: scale(1.1);
+    filter: grayscale(0);
+}
+
+.box-escolha {
+    width: 128px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(278, 17%, 13%, 0.48);
+    border-radius: 8px;
+    padding: 16px;
+    bottom: -10%;
+    left: 25%;
+    backdrop-filter: blur(22px);
+    gap: 0.6rem;
+    z-index: 1000 !important;
+}
+
+.box-escolha h3 {
+    font-size: 1rem;
+}
+
+.box-escolha span {
+    font-size: 0.8rem;
+}
+
+.emoji-astronauta, .emoji-foguete {
+    width: 2rem !important;
+}
+
+.container-button {
+    margin-top: 3rem;
+}
+
+/*  FIM DE CONTAINER DO TIPO DE CONTA PROFISSIONAL / EMRPESA */
+
+.container-astronauta[data-selecionado="selecionado"], .container-empresa[data-selecionado="selecionado"]{
+    transition: 450ms;
+    border: 2px solid var(--lilas-secundario);
+}
+
+.box-categoria-profissional[data-selecionado="selecionado"] {
+    background-color: var(--cor-primaria);
+    color: var(--bg-primario);
+}
+
+/* Começo forms de cadastro de informações após escolha do tipo de conta */
+
+.forms-cadastro { margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.forms-cadastro label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    color: var(--texto-primario);
+    gap: 0.8rem;
+}
+
+.forms-cadastro label input {
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--texto-primario);
+    background-color: var(--bg-secundario);
+    border: 1px solid var(--bg-secundario);
+    border-radius: 4px;
+    width: 420px; 
+}
+
+.forms-cadastro label input:focus {
+    border: 1px solid var(--lilas-secundario);
+    color: var(--lilas-secundario);
+}
+
+.forms-cadastro .estrutura-select {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.2rem;
+}
+
+.forms-cadastro .estrutura-select input {
+    width: 280px;
+}
+
+.forms-cadastro select {
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--placeholder-color);
+    background-color: var(--bg-secundario);
+    border: 1px solid var(--bg-secundario);
+    border-radius: 4px;
+    height: 52.2px;
+}
+
+.input-nome-social {
+    display: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--texto-primario);
+    background-color: var(--bg-secundario);
+    border: 1px solid var(--bg-secundario);
+    border-radius: 4px;
+    width: 420px; 
+}
+
+.input-nome-social.ativo {
+    display: block;
+}
+
+.input-nome-social:focus{
+    border: 1px solid var(--lilas-secundario);
+}
+
+/* Fim forms de cadastro de informações após escolha do tipo de conta */
+
+/* Começo etapa de seleção de categoria profissional */
+.container-categoria-profissional{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.box-categoria-profissional {
+    color: var(--texto-primario);
+    background-color: #17161F;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 192px;
+    height: 168px; 
+    cursor: pointer;
+    border: 1px solid #17161F;
+}
+
+.box-categoria-profissional i {
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+} 
+
+.box-categoria-profissional:hover, .box-categoria-profissional:focus {
+    border: 1px solid var(--cor-primaria);
+}
+
+.container-detalhe-profissional {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #17161F;
+    width: 480px;
+}
+
+.container-detalhe-profissional label select{
+    background-color: var(--bg-primario);
+}
+
+
+.container-detalhe-profissional p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: var(--placeholder-color);
+}
+
+/* Fim  etapa de seleção de categoria profissional */
+
+.container-checked-modalide-trabalho {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.container-checked{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.container-checked div {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.container-checked.ativo{
+    display: flex;
+}
+
+.container-funcao-especializacao{
+    display: flex;
+    gap: 1rem;
+}
+
+.select-tempo-experiencia{
+  padding: 1rem;
+  width: 128px;
+  background-color: var(--bg-secundario);
+  color: var(--texto-primario);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+
+.select-tempo-experiencia:focus {
+    border: 2px solid var(--lilas-secundario);
+}
+
+
+/* Finalizando cadastro */
+.finalizando {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    
+}
+
+.backgroundBlur {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    left: -15%;
+    background: radial-gradient(70.95% 70.95% at 50% 50%, rgba(64, 61, 78, 0.8) 0%, rgba(40, 38, 51, 0) 78.56%);
+    filter: blur(103px);
+}
+
+
+.finalizandoItems {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 1170px;
+    height: 400px;
+    position: relative;
+}
+
+.finalizandoItems h3{
+    font-family: var(--font-principal);
+    font-size: 3rem;
+    background: linear-gradient(91.21deg, #FF3370 -4.21%, #FF8080 97.92%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.finalizandoBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 800px;
+    height: 160px;
+    background-color: #fff;
+    border-radius: 8px;
+    background: linear-gradient(91.1deg, rgba(50, 46, 64, 0.8) 0.29%, rgba(26, 24, 35, 0.8) 101.22%);
+    backdrop-filter: blur(36px);
+    position: relative;
+    z-index: 99;
+}
+
+.finalizandoBox h4 {
+    font-family: var(--font-secundaria);
+    font-size: 1.5rem;
+}
+
+.finalizandoBox a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #121118;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 240px;
+    height: 50px;
+    border-radius: 4px;
+    background: linear-gradient(91.21deg, #FF3370 -4.21%, #FF8080 97.92%);
+    position: absolute;
+    bottom: -25px;
+}
+
+.imgFoguete {
+    position: absolute;
+    right: 70px;
+    top: 80px;
+    z-index: -1;
+}
+
+.imgFoguete img {
+    width: 220px;
+
+}
+
+.subdiv-radio {
+    display: flex;
+    justify-content: space-between;
+}
+
+.subdiv-radio input{
+    margin-left: 10px;
+}
+
+
+/* --- Responsive register --- */
+
+/* Extra small devices (portrait phones, less than 576px)*/
+@media screen and (max-width: 575.98px) {
+    /* Finalização */
+    .finalizandoItems {
+        max-width: 350px;
+    }
+    
+    .finalizandoItems h3 {
+        font-size: 1.5rem;
+    }
+    
+    .finalizandoBox{
+        width: 360px;
+        height: 140px;
+    }
+    
+    .finalizandoBox h4 {
+        font-size: .9rem;
+    }
+    
+    .backgroundBlur  {
+        width: 200px;
+        height: 200px;
+        left: -20%;
+    }
+    
+    .imgFoguete {
+        position: absolute;
+        right: -10px;
+        top: 100px;
+        z-index: -1;
+    }
+    
+    .imgFoguete img {
+        width: 150px;
+        
+    }
+    
+    .finalizandoBox a {
+        width: 150px;
+        height: 40px;
+    }
+
+    /* form empresa */
+
+    #cadastro-etapa2 h1 {
+        font-size: 1rem;
+    }
+
+    .forms-cadastro label input{
+        width: 320px;
+    }
+
+    .forms-cadastro label {
+        font-size: .8rem;
+    }
+
+    .radio-padrao {
+        width: 20px;
+        height: 20px;
+    }
+
+    .forms-cadastro h3 {
+        font-size: 1rem;
+    }
+
+    .container-button {
+        flex-direction: column;
+    }
+
+
+    /* form profissional */
+    .container-radio {
+        flex-direction: column;
+        width: 320px;
+    }
+
+    .subdiv-radio {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .input-nome-social {
+        width: 320px;
+    }
+    
+    .subdiv-radio input{
+        margin-left: 10px;
+    }
+
+
+    .estrutura-select {
+        flex-direction: column;
+    }
+
+    .estrutura-select label, .forms-cadastro .estrutura-select input{
+        width: 320px;
+    }
+
+    /* profissional */
+    .container-categoria-profissional {
+        justify-content: center;
+        width: 320px;
+    }
+
+    .box-categoria-profissional {
+        font-size: .8rem;
+        width: 150px;
+        height: 120px;
+    }
+
+    .box-categoria-profissional i {
+        font-size: 1.5rem;
+    }
+
+    .container-funcao-especializacao {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+
+    .select-tempo-experiencia, .select-padrao {
+        width: 320px;
+    }
+
+    .container-detalhe-profissional {
+        justify-content: center;
+        align-items: center;
+        width: 98%;
+    }
+
+    .container-detalhe-profissional label {
+        width: 320px;
+    }
+
+    .input-padrao {
+        width: 320px;
+    }
+
+    .box-radio {
+        width: 320px;
+        justify-content: space-between;
+    }
+
+    .container-button {
+        width: 85%;
+    }
+
+    .container-checked {
+        width: 90%;
+    }
+
+    .container-checked div {
+        justify-content: center;
+    }
+
+    .box-checked {
+        display: flex;
+        justify-content: space-between;
+        width: 320px;
+    }
+
+}
+
+/* Small devices (tablet, 576px and up) */
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+   /* Finalização */
+   .finalizandoItems {
+    max-width: 500px;
+  }
+
+  .finalizandoItems h3 {
+    font-size: 2.2rem;
+  }
+
+  .finalizandoBox{
+    width: 550px;
+  }
+
+  .finalizandoBox h4 {
+    font-size: 1.2rem;
+  }
+
+  .backgroundBlur  {
+    width: 300px;
+    height: 300px;
+    left: -20%;
+  }
+
+  .imgFoguete {
+    position: absolute;
+    right: -20px;
+    top: 80px;
+    z-index: -1;
+    }
+
+    .imgFoguete img {
+        width: 200px;
+    
+    }
+
+    .finalizandoBox a {
+        width: 200px;
+    }
+
+     /* profissional */
+     .container-categoria-profissional {
+        justify-content: center;
+        width: 580px;
+    }
+
+    .box-categoria-profissional {
+        font-size: .8rem;
+        width: 150px;
+        height: 120px;
+    }
+
+    .box-categoria-profissional i {
+        font-size: 1.5rem;
+    }
+
+    .container-checked div{
+        justify-content: center;
+        align-items: center;
+    }
+
+   
+   
+   
+}
+
+/* Small devices (tablet modo paisagem) */
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  /* Finalização */
+  .finalizandoItems {
+    max-width: 768px;
+  }
+
+  .finalizandoItems h3 {
+    font-size: 2.5rem;
+  }
+
+  .finalizandoBox{
+    width: 730px;
+  }
+
+  .backgroundBlur  {
+    width: 400px;
+    height: 400px;
+    left: -20%;
+  }
+
+  .imgFoguete {
+    position: absolute;
+    right: -20px;
+    top: 80px;
+    z-index: -1;
+    }
+
+    .imgFoguete img {
+        width: 200px;
+    
+    }
+
+     /* profissional */
+     .container-categoria-profissional {
+        justify-content: center;
+        width: 768px;
+    }
+
+    .container-checked div{
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+    /* profissional */
+    .container-categoria-profissional {
+        justify-content: center;
+        width: 800px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+
+}

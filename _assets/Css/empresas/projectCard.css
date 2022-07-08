@@ -1,0 +1,109 @@
+.cont_projeto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.project_items {
+    display: flex;
+    align-items: center;
+    width: 750px;
+    height: 190px;
+    background-color: var(--bg-secundario);
+    border-radius: 12px;
+    position: relative;
+}
+
+.project_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: inherit;
+    margin-left: 90px;
+    position: relative;
+}
+
+
+.project_text h3 {
+    font-family: var(--font-principal);
+    font-size: 2rem;
+    color: var(--texto-primario);
+    font-weight: 400;
+}
+
+.project_text p {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    color: var(--texto-primario);
+    margin: 10px 0;
+}
+
+.project_text input {
+    background-color: #261F33;
+    color: var(--lilas-placeholder);
+    width: 200px;
+    height: 45px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.img {
+    position: absolute;
+    left: -70px;
+}
+
+
+.border_project {
+    width: 753px;
+    height: 194px;
+    background: linear-gradient(to bottom, #CFB3FF 30%, #151219);
+    border-radius: 12px;
+    position: absolute;
+    z-index: -1;
+}
+
+
+/* Extra small devices (portrait phones, less than 576px)*/
+@media screen and (max-width: 575.98px) {
+    .project_items, .border_project {
+        display: none;
+    }
+}
+
+/* Small devices (tablet, 576px and up) */
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+    .project_items, .border_project {
+        display: none;
+    }
+
+   
+}
+
+/* Small devices (tablet modo paisagem) */
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    .project_items {
+        width: 600px;
+        padding-right: 20px;
+    }
+
+    .border_project {
+        width: 603px;
+    }
+
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+    .project_items {
+        width: 650px;
+        padding-right: 20px;
+    }
+
+    .border_project {
+        width: 653px;
+    }
+}

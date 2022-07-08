@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <!--Meta tags-->
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="keywords" content="editar">
+   <meta name="description" content="editar">
+   <meta name="author" content="editar">
+
+   <!-- Font Awesome -->
+   <script src="https://kit.fontawesome.com/2bf2ec62ee.js" crossorigin="anonymous"></script>
+
+   <!-- Styles -->
+   <link rel="stylesheet" href="../_assets/Css/login/telaLogin.css">
+   
+
+
+   <title>Resolute - Ideias de outro mundo</title>
+   <link rel="icon" href="../_assets/img/resoluteIcon.png">
+</head>
+<body>
+
+    <main>
+        <section class="cont_login">
+
+            <div class="cont_form">
+                <div class="form_items">
+                    <h1>Entrar na sua conta</h1>
+
+                    <div class="select_model">
+                        <button type="button" class="buttonModel selected" id="btnProfissional">
+                            Profissional
+                            <span class="iconFreela"></span>
+                        </button>
+                        <button type="button" class="buttonModel" id="btnCompany">
+                            Empresa
+                            <span class="iconEmpresa"></span>
+                        </button>
+                    </div>
+
+                    <div class="divForm formDisable" id="form_freela">
+                        <form method="post" action="">
+                            <label for="loginFreela">E-mail</label>
+                            <input type="email" id="loginFreela" name="loginFreela" class="input" placeholder="Digite o seu e-mail" tabindex="0">
+
+                            <label for="senhaFreela">Senha</label>
+                            <input type="password" id="senhaFreela" name="senhaFreela" class="input" placeholder="Digite a sua senha" tabindex="1">
+                        
+                            <a href="#" class="btnRecuperar">Esqueceu a senha?</a>
+
+                            <input id="submitFreela" type="submit" value="Confirmar" class="btnConfirmar" tabindex="2">
+                        
+                            <a href="#" class="btnCriar">
+                                Não tem uma conta ? <span>criar uma conta</span>
+                            </a>
+                        
+                        </form>
+                    </div>
+
+                    <div class="divForm " id="form_Company">
+                        <form method="post" action="">
+                            <label for="loginCompany">E-mail</label>
+                            <input type="email" id="loginCompany" name="loginCompany" class="input" placeholder="Digite o seu e-mail" >
+
+                            <label for="senhaCompany">Senha</label>
+                            <input type="password" id="senhaCompany" name="senhaCompany" class="input" placeholder="Digite a sua senha" >
+                        
+                            <a href="#" class="btnRecuperar">Esqueceu a senha?</a>
+
+                            <input id="submitCompany" type="submit" value="Confirmar" class="btnConfirmar">
+                        
+                            <a href="telaEscolhaDeRegistro.html" class="btnCriar" target="_blank">
+                                Não tem uma conta ? <span>criar uma conta</span>
+                            </a>
+                        
+                        </form>
+                    </div>
+
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+            <div class="cont_background">
+                <div class="balaoMensagem">
+                    <p>
+                        Venha se tornar parte do nosso marketplace de prestadores de serviço, 
+                        aqui a sua empresa hospeda os seus projetos e tem eles construídos rapidamente
+                        pelos melhores profissionais da galáxia.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+
+       <!--V-libras-->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+
+    <!--Scripts-->
+    <script src="../_assets/js/login/telaLogin.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,964 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+
+.container_projetos {
+    display: flex !important;
+    flex-direction: column;
+}
+
+
+.cont_buscar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+
+.profissionais_items {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 1400px;
+    height: 100%;
+    gap: 3rem;
+}
+
+/* formatação filtro */
+.filtro {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-secundario);
+    padding: 40px;
+    border-radius: 4px;
+    height: 1700px;
+    max-height: 1700px;
+}
+
+.filtro h2 {
+    color: #fff;
+    font-family: var(--font-secundaria);
+    margin-bottom: 20px;
+}
+
+.filtro h3 {
+    color: var(--texto-primario);
+    font-size: 1rem;
+    font-family: var(--font-secundaria);
+    font-weight: 300;
+    margin: 25px 0 15px 0;
+}
+
+.containerSelect {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    background-color: #151219;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.paddingExtra {
+    margin-bottom: 12px;
+}
+
+.select {
+    width: 90%;
+    background-color: transparent;
+    color: #808080;
+    cursor: pointer;
+    font-family: var(--font-secundaria);
+}
+
+.categorias {
+    display: flex;
+    flex-direction: column;
+}
+
+.opcaoCateg{
+    display: flex;
+    align-items: center;
+    font-family: var(--font-secundaria);
+    font-size: .9rem;
+    margin-bottom: 10px;
+    color: var(--texto-primario);
+    cursor: pointer;
+}
+
+.opcaoCateg p {
+    padding-left: 10px;
+}
+
+.inputCateg {
+    width: 15px;
+    height: 15px;
+    background-color: var(--texto-primario);
+    border-radius: 4px;
+    transition: all ease .3s;
+}
+
+.inputCateg:hover, .inputCateg.cateActive {
+    background-color: var(--lilas-secundario);
+    box-shadow: 1px 1px 10px rgb(207, 179, 255);
+}
+
+.classes_btn {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 40px;
+}
+
+.deficienias, .ambiente{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 80px;
+}
+
+.btn_classe, .btn_deficiencias, .btn_ambiente {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-primario);
+    font-family: var(--font-secundaria);
+    font-size: .85rem;
+    padding: 10px 25px;
+    height: 30px;
+    border-radius: 20px;
+    color: var(--lilas-placeholder);
+    cursor: pointer;
+    transition: all ease .3s;
+    margin-right: 10px;
+    transition: all ease .3s;
+}
+
+.btn_classe:hover, .btn_classe.classeActive {
+    outline: 1px solid var(--lilas-secundario);
+    color: var(--lilas-secundario);
+    background-color: #261F33;
+}
+
+.btn_deficiencias:hover, .btn_deficiencias.defActive {
+    outline: 1px solid var(--lilas-secundario);
+    color: var(--lilas-secundario);
+    background-color: #261F33;
+}
+
+.btn_ambiente:hover, .btn_ambiente.ambActive {
+    outline: 1px solid var(--lilas-secundario);
+    color: var(--lilas-secundario);
+    background-color: #261F33;
+}
+
+
+.five, .for, .tree  {
+    padding: 5px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.starText{
+    font-family: var(--font-secundaria);
+    padding-left: 10px;
+    color: var(--placeholder-color);
+    font-size: 1rem;
+    transition: all ease .3s;
+    cursor: pointer;
+}
+
+.starText i {
+    font-size: .8rem;
+} 
+
+.inputRadio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background-color: var(--bg-primario);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+
+.inputRadio.border {
+    border: 1px solid var(--lilas-secundario);
+}
+
+.inputInterno {
+    opacity: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--lilas-secundario);
+    transition: all ease .3s;
+}
+
+.inputInterno.internoActive {
+    opacity: 1;
+}
+
+
+.starActiveText {
+    color: var(--lilas-secundario);
+}
+
+.projetos {
+    display: flex;
+}
+
+.btn_qtdProjetos {
+   background-color: var(--bg-primario);
+   font-family: var(--font-secundaria);
+   font-size: 1rem;
+   padding: 12px 15px;
+   margin: 0 10px 0 0;
+   border-radius: 4px;
+   color: #808080;
+   cursor: pointer;
+   transition: all ease .3s;
+}
+
+.btn_qtdProjetos:hover {
+    outline: 1px solid var(--lilas-secundario);
+    color: var(--lilas-secundario); 
+    
+}
+
+.btnProjetosActive {
+    outline: 1px solid var(--lilas-secundario);
+    color: var(--lilas-secundario);
+}
+
+/* formatação profissionais */
+.profissionais {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+/* search  */
+.search {
+    display: flex;
+    width: 700px;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 4px 0px 0px 4px;
+    background-color: var(--bg-secundario);
+}
+
+.search input {
+    width: 100%;
+    background-color: transparent;
+    padding-left: 20px;
+    color: var(--texto-primario);
+}
+
+.btn_search {
+    width: 60px;
+    background-color: #272433;
+    border-radius: 0px 4px 4px 0px;
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.btn_search i {
+    font-size: 1rem;
+}
+
+.btn_search:hover {
+    background-color: var(--cor-primaria);
+}
+
+/* Filtros aplicados  */
+.filtrosAplicados {
+    display: flex;
+    width: 700px;
+    height: 40px;
+}
+
+.filtrosAplicados p {
+    color: #fff;
+}
+
+/* vagas  */
+.container_vagas {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    overflow: hidden;
+
+}
+
+.vaga {
+    display: flex;
+    background-color: var(--bg-secundario);
+    width: 700px;
+    height: 325px;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.vagaPCD {
+    border-left: 4px solid #FF8080;
+    display: flex;
+    background-color: var(--bg-secundario);
+    width: 700px;
+    height: 325px;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.vaga_items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+   
+}
+
+/* --- Informações empresa ---*/
+.vaga_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.empresa {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 80px;
+}
+
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+
+.avatar img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+
+.empresa_text {
+    margin-left: 15px;
+}
+
+.empresa_text h2 {
+    font-family: var(--font-secundaria);
+    font-size: 22px;
+    color: var(--texto-primario);
+    font-weight: 500;
+}
+
+.empresa_text p {
+    font-family: var(--font-secundaria);
+    font-size: 12px;
+    color: var(--placeholder-color);
+    margin: 5px 0;
+}
+
+.avaliacao i {
+    font-size: 12px;
+    color: var(--placeholder-color);
+}
+
+.avaliacao i.valid {
+    color: var(--lilas-secundario);
+}
+
+
+.preco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.preco h2 {
+    font-family: var(--font-secundaria);
+    color: var(--cor-primaria);
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.preco P {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-secundaria);
+    color: var(--cor-primaria);
+    width: 100%;
+    height: 40px;
+    background-color: var(--bg-primario);
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+
+/* --- Descricao da vaga ---*/
+.descricao_vaga {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 15px;
+}
+
+.descricao_vaga h3 {
+    font-family: var(--font-secundaria);
+    font-size: .9rem;
+    color: var(--lilas-secundario);
+    margin-bottom: 3px;
+}
+
+.descricao_vaga p {
+    font-family: var(--font-secundaria);
+    font-size: .9rem;
+    color: var(--texto-primario);
+    font-weight: 300;
+}
+
+.descricao_vaga a {
+    font-family: var(--font-secundaria);
+    font-size: .9rem;
+    color: var(--lilas-secundario);
+    font-weight: 300;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+
+
+/* --- Requisitos vagas ---*/
+.req {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.reqItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    height: 34px;
+    border-radius: 50px;
+    background-color: var(--cor-primaria);
+    background-color: var(--bg-primario); 
+    margin-right: 15px;
+}
+
+.reqItem p {
+    font-family: var(--font-secundaria);
+    color: var(--lilas-secundario); 
+    font-size: 14px;
+}
+
+.reqItemPCD {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    height: 34px;
+    border-radius: 50px;
+    background-color: var(--cor-primaria);
+    margin-right: 15px;
+}
+
+.reqItemPCD p {
+    font-family: var(--font-secundaria);
+    color: var(--bg-primario);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+
+
+/* --- Botoes vagas ---*/
+.cont_btns {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.btn_enviarProposta {
+    background-color: var(--bg-primario);
+    width: 210px;
+    height: 43px;
+    margin-right: 20px;
+    font-family: var(--font-secundaria);
+    font-size: 14px;
+    color: var(--placeholder-color);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn_detalhesVaga {
+    background: transparent;
+    border-radius: 4px;
+    border: 1px solid var(--lilas-placeholder);
+    width: 190px;
+    height: 43px;
+    font-family: var(--font-secundaria);
+    font-size: 14px;
+    color: var(--lilas-placeholder);
+    cursor: pointer;
+}
+
+.container_projetos {
+    display: block;
+}
+
+
+/* --- Botoes para mais vagas ---*/
+.btnNextVagas {
+    display: flex;
+    justify-content: center;
+    width: 720px;
+    margin: 0;
+}
+
+.btnNext {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #261F33;
+    cursor: pointer;
+    border: none;
+    color: var(--lilas-placeholder);
+    transition: all ease .3s;
+    margin: 0 6px;
+    font-size: 1rem;
+    
+}
+
+.btnNext:hover {
+    border: 1px solid var(--lilas-secundario);
+    color: var(--lilas-secundario);
+}
+
+.btnActive {
+    border: 1px solid var(--lilas-secundario);
+    color: var(--lilas-secundario);
+}
+
+.filtroMobileButton {
+    display: none;
+}
+
+.filtroMobile {
+    display: none;
+    flex-direction: column;
+    background-color: var(--bg-secundario);
+    padding: 40px;
+    border-radius: 4px;
+    height: 700px;
+    max-height: 650px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.filtroMobile h3 {
+    color: #fff;
+    font-family: var(--font-secundaria);
+    margin-bottom: 20px;
+}
+
+.filtroMobile h4 {
+    color: #fff;
+    font-family: var(--font-secundaria);
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-size: .8rem;
+    font-weight: 400;
+}
+
+.btnFiltroMobile {
+    background-color: transparent;
+    font-size: 1rem;
+    color: var(--texto-primario);
+}
+
+.btnFiltroMobile i{
+    margin-right: 10px;
+    color: #FF3370;
+}
+
+.exitFiltroMobile {
+    border-radius: 4px;
+    height: 40px;
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    background: linear-gradient(91.21deg, #FF3370 -4.21%, #FF8080 97.92%);
+}
+
+
+
+
+/* Extra small devices (portrait phones, less than 576px)*/
+@media screen and (max-width: 575.98px) {
+    .profissionais_items {
+        width: 350px;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .btnNextVagas {
+        width: 350px;
+    }
+
+    .classes_btn {
+        height: 90px;
+    }
+
+    .deficienias {
+        height: 170px;
+    }
+    .btn_deficiencias {
+        width: 190px;
+    }
+
+    .filtrosAplicados, .search {
+        width: 350px;
+    }
+
+    .profissionais_items {
+        overflow: hidden;
+    }
+
+    .filtro {
+        display: none;
+    }
+
+
+    /* Filtro mobile */
+
+    .filtroMobileButton {
+        display: flex;
+    }
+
+  .filtroMobile {
+    display: flex;
+    background-color: var(--bg-secundario);
+    height: 700px !important; 
+    width: 90%;
+    text-align: left;
+    position: fixed;
+    top: 90px;
+    right: 100%;
+    margin: 0 20px;
+    height: 250px;
+    border-radius: 5px;
+    transition: all ease .4s;
+    z-index: 10;
+    
+  }
+
+  .filtroMobile.filtroActive {
+    right: 0%;
+  } 
+
+    /* vagas */
+    .vaga, .vagaPCD {
+        width: 350px;
+        height: 450px;
+        
+    }
+
+    .reqItemPCD p {
+        font-size: 12px;
+    }
+
+     /* empresa */
+   
+
+    .vaga_info {
+        flex-direction: column;
+        align-items: flex-start;
+        
+    }
+
+    .empresa {
+        justify-content: space-between;
+    }
+
+    .avatar, .avatar img  {
+        width: 50px;
+        height: 50px;
+    }
+
+    .empresa_text h2{
+        font-size: 15px;
+    }
+
+    .avaliacao i {
+        font-size: 10px;
+    }
+
+    .preco {
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .preco h2 {
+        display: none;
+        font-size: 15px;
+    }
+
+    .preco p {
+        font-size: 15px;
+    }
+
+    .preco p::before {
+        content: "Preco hora: ";
+        padding-right: 10px;
+    }
+
+    /* descricao */
+    .descricao_vaga {
+        width: 100%;
+    }
+
+    /* --- Requisitos vagas ---*/ 
+    .req {
+        width: 100%;
+        
+    }
+
+    /* --- Botoes vagas ---*/
+    .cont_btns {
+        width: 100%;
+    }
+
+    
+
+}
+
+/* Small devices (tablet, 576px and up) */
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+    .profissionais_items {
+        width: 576px;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .empresa_text h2{
+        font-size: 15px;
+    }
+
+    .avaliacao i {
+        font-size: 10px;
+    }
+
+    .btnNextVagas {
+        width: 550px;
+    }
+
+    .classes_btn {
+        height: 90px;
+    }
+
+    .deficienias {
+        height: 170px;
+    }
+    .btn_deficiencias {
+        width: 190px;
+    }
+
+    .filtrosAplicados, .search {
+        width: 550px;
+    }
+
+    .vaga, .vagaPCD {
+        width: 550px;
+    }
+
+    .filtro {
+        display: none;
+    }
+
+    .filtroMobileButton {
+        display: flex;
+        padding-left: 15px;
+    }
+        
+    .filtroMobile {
+        display: flex;
+        background-color: var(--bg-secundario);
+        height: 700px !important; 
+        width: 90%;
+        text-align: left;
+        position: fixed;
+        top: 90px;
+        right: 100%;
+        margin: 0 20px;
+        height: 250px;
+        border-radius: 5px;
+        transition: all ease .4s;
+        z-index: 10;
+        
+    }
+    
+      .filtroMobile.filtroActive {
+        right: 0%;
+      } 
+}
+
+/* Small devices (tablet modo paisagem) */
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    .profissionais_items {
+        width: 768px;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .classes_btn {
+        height: 90px;
+    }
+
+    .deficienias {
+        height: 170px;
+    }
+    .btn_deficiencias {
+        width: 190px;
+    }
+
+    .filtrosAplicados, .search {
+        width: 600px;
+    }
+
+    .vaga, .vagaPCD {
+        width: 600px;
+    }
+
+    /* Filtro mobile */
+
+    .filtro {
+        display: none;
+       
+    }
+
+    .filtroMobileButton {
+        display: flex;
+        justify-content: flex-start;
+        width: 78%;
+        margin: 0 auto;
+        
+    }
+        
+    .filtroMobile {
+        display: flex;
+        background-color: var(--bg-secundario);
+        height: 700px !important; 
+        width: 90%;
+        text-align: left;
+        position: fixed;
+        top: 90px;
+        right: 100%;
+        margin: 0 20px;
+        height: 250px;
+        border-radius: 5px;
+        transition: all ease .4s;
+        z-index: 10;
+        
+    }
+    
+      .filtroMobile.filtroActive {
+        right: 0%;
+      } 
+
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+    .profissionais_items {
+        width: 992px;
+        grid-template-columns: 1.2fr 1.8fr;
+        gap: 2rem;
+    }
+
+    .classes_btn {
+        height: 90px;
+    }
+
+    .deficienias {
+        height: 170px;
+    }
+    .btn_deficiencias {
+        width: 190px;
+    }
+
+    .filtrosAplicados, .search {
+        width: 600px;
+    }
+
+    .vaga, .vagaPCD {
+        width: 600px;
+    }
+
+
+    .btnNextVagas {
+        width: 600px;
+    }
+
+    .filtro {
+        height: 1750px;
+        max-height: 1750px;
+    }
+
+    .ambiente {
+        height: 150px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media screen and (min-width: 1200px) and (max-width: 1399px)  {
+    .profissionais_items {
+        width: 1200px;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .classes_btn {
+        height: 90px;
+    }
+
+    .deficienias {
+        height: 170px;
+    }
+    .btn_deficiencias {
+        width: 190px;
+    }
+    
+    
+  
+}
+
